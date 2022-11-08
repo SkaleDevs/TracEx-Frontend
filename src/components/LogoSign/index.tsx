@@ -8,8 +8,6 @@ import {
   useTheme
 } from '@mui/material';
 import Link from 'src/components/Link';
-
-import urjaLogo from 'logo.png';
 import Image from 'next/image';
 
 const LogoWrapper = styled(Link)(
@@ -17,16 +15,17 @@ const LogoWrapper = styled(Link)(
         color: ${theme.palette.text.primary};
         display: flex;
         text-decoration: none;
-        width: 53px;
+        width: 222px;
         margin: 0 auto;
+        margin-top: -50px;
         font-weight: ${theme.typography.fontWeightBold};
 `
 );
 
 const LogoSignWrapper = styled(Box)(
   () => `
-        width: 52px;
-        height: 38px;
+        width: 210px;
+        height: 115px;  
 `
 );
 
@@ -48,13 +47,11 @@ const TooltipWrapper = styled(({ className, ...props }: TooltipProps) => (
 }));
 
 function Logo() {
-  const theme = useTheme();
-
   return (
     <TooltipWrapper title="Urja Dashboard" arrow>
       <LogoWrapper href="/">
         <LogoSignWrapper>
-          <Image src= "/logo.png" width= {150} height= {158} />
+          <Image src= "/logo.png" width= {400} height= {300} />
         </LogoSignWrapper>
       </LogoWrapper>
     </TooltipWrapper>
