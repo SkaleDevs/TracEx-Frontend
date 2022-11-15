@@ -1,11 +1,9 @@
 import {
   Box,
   Tooltip,
-  Badge,
   TooltipProps,
   tooltipClasses,
   styled,
-  useTheme
 } from '@mui/material';
 import Link from 'src/components/Link';
 import Image from 'next/image';

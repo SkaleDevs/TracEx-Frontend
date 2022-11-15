@@ -13,3 +13,8 @@ const redirects = {
 };
 
 module.exports = withImages(redirects);
+module.exports = {
+  images: {
+    domains: ['images.unsplash.com']
+  }
+}
