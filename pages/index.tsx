@@ -38,7 +38,7 @@ function Overview() {
   return (
     <OverviewWrapper>
       <Head>
-        <title>Tokyo Free White NextJS Typescript Admin Dashboard</title>
+        <title>Urja | Energy Saving Montitoring App</title>
       </Head>
       <HeaderWrapper>
         <Container maxWidth="lg">
@@ -58,7 +58,15 @@ function Overview() {
                   variant="contained"
                   sx={{ ml: 2 }}
                 >
-                  Live Preview
+                  Login
+                </Button>
+                <Button
+                  component={Link}
+                  href="/dashboards/crypto"
+                  variant="contained"
+                  sx={{ ml: 2 }}
+                >
+                  Sign Up
                 </Button>
               </Box>
             </Box>
@@ -68,13 +76,13 @@ function Overview() {
       <Hero />
       <Container maxWidth="lg" sx={{ mt: 8 }}>
         <Typography textAlign="center" variant="subtitle1">
-          Crafted by{' '}
+          Developed by{' '}
           <Link
-            href="https://bloomui.com"
+            href="https://github.com/ShellShock01"
             target="_blank"
             rel="noopener noreferrer"
           >
-            BloomUI.com
+            Team ShellShock
           </Link>
         </Typography>
       </Container>
