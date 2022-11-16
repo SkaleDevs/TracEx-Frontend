@@ -27,7 +27,7 @@ const LogoSignWrapper = styled(Box)(
 const LogoSign = styled(Box)(
   ({ theme }) => `
         background: ${theme.general.reactFrameworkColor};
-        width: 18px;
+        width: 10px;
         height: 18px;
         border-radius: ${theme.general.borderRadiusSm};
         position: relative;

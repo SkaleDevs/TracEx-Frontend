@@ -23,7 +23,7 @@ const LogoWrapper = styled(Link)(
 const LogoSignWrapper = styled(Box)(
   () => `
         width: 210px;
-        height: 115px;  
+        height: 135px;  
 `
 );
 
@@ -49,7 +49,7 @@ function Logo() {
     <TooltipWrapper title="Urja Dashboard" arrow>
       <LogoWrapper href="/">
         <LogoSignWrapper>
-          <Image src= "/logo.png" width= {400} height= {300} />
+          <Image src= "/logo.png" width= {230} height= {190} />
         </LogoSignWrapper>
       </LogoWrapper>
     </TooltipWrapper>
