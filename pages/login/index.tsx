@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Grid from '@mui/material/Grid';
 import {
   Button,
   Card,
   CardContent,
+  Link,
   TextField,
   Typography
 } from '@mui/material';
@@ -11,7 +12,19 @@ import Image from 'next/image';
 
 import LoginIllustration from '/public/loginIllustration.svg';
 import logo from '/public/logo.png';
+
 const Login = () => {
+
+  const emailInputRef = useRef<HTMLInputElement>(null);
+  const passwordInputRef = useRef<HTMLInputElement>(null);
+
+  const loginHandler = () => {
+    const inputEmail = emailInputRef.current.value;
+    const inputPassword = passwordInputRef.current.value;
+
+    console.log("Email and password are:", inputEmail, inputPassword);
+  }
+
   return (
     <Grid
       container
@@ -62,39 +75,44 @@ const Login = () => {
 
                 {/* Login Form */}
 
-                <Grid item sm={12}>
-                  <TextField
-                    variant="standard"
-                    label="Email Address"
-                    type="email"
-                    fullWidth
-                    placeholder="johndoe@gmail.com"
-                    required
-                    sx={{ width: '30rem', color: '#B6E2A1' }}
-                    // autoComplete="current-password"
-                    // value={Username}
-                    // onChange={(e) => setUsername(e.target.value)}
-                  />
-                </Grid>
-                <Grid item sm={12}>
-                  <TextField
-                    variant="standard"
-                    label="Password"
-                    type="password"
-                    placeholder="Enter your password"
-                    required
-                    fullWidth
-                    sx={{ width: '30rem', color: '#B6E2A1' }}
-                    // autoComplete="current-password"
-                    // value={Password}
-                    // onChange={(e) => setPassword(e.target.value)}
-                  />
-                </Grid>
-                <Grid item sm={12}>
-                  <Button variant="contained" fullWidth color="success" sx={{paddingX: '3rem'}}>
-                    Login
-                  </Button>
-                </Grid>
+                <form
+                  noValidate
+                  autoComplete="off"
+                  onSubmit={(e) => e.preventDefault()}
+                >
+                  <Grid item sm={12}>
+                    <TextField
+                      variant="standard"
+                      label="Email Address"
+                      type="email"
+                      fullWidth
+                      placeholder="johndoe@gmail.com"
+                      required
+                      inputRef={emailInputRef}
+                      sx={{ width: '30rem', color: '#B6E2A1', marginY: '1rem' }}
+                    />
+                  </Grid>
+                  <Grid item sm={12}>
+                    <TextField
+                      variant="standard"
+                      label="Password"
+                      type="password"
+                      placeholder="Enter your password"
+                      inputRef={passwordInputRef}
+                      required
+                      fullWidth
+                      sx={{ width: '30rem', color: '#B6E2A1', marginY: '2rem' }}
+                    />
+                  </Grid>
+                  <Grid item sm={12}>
+                    <Button variant="contained" type='submit' onClick={loginHandler} fullWidth color="success" sx={{ marginY: '3rem', paddingX: '3rem' }}>
+                      Login
+                    </Button>
+                  </Grid>
+                </form>
+                <Typography variant='subtitle2' sx={{ marginTop: '-1rem' }} >
+                  Don't have an account? <Link href='/register'> Sign up for a new account </Link>
+                </Typography>
               </Grid>
             </Grid>
           </Grid>
