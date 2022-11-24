@@ -12,6 +12,7 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 import {
   Card,
+  CardActions,
   CardContent,
   CardHeader,
   FormControl,
@@ -37,7 +38,7 @@ const MileOne = () => {
       }}
     >
       <CardHeader
-        title="Made a contribution to saving Energy ? ( Mile 1 )"
+        title="Made a contribution to saving Energy ? ( Mile 1 : 10C Reward )"
         subheader="Share with us and earn rewards !"
       />
       <CardContent>
@@ -73,7 +74,6 @@ const MileOne = () => {
                 id="outlined-basic"
                 label="Expected Implementation Time"
                 variant="outlined"
-                type="time"
               />
             </FormControl>
           </Grid>
@@ -90,6 +90,7 @@ const MileOne = () => {
               />
             </FormControl>
           </Grid>
+          <Grid item xs={12} sm={6}></Grid>
           <Grid item xs={12}>
             <FormControl fullWidth>
               <TextField
@@ -103,6 +104,9 @@ const MileOne = () => {
           </Grid>
         </Grid>
       </CardContent>
+      <CardActions>
+        <Button>Submit</Button>
+      </CardActions>
     </Card>
   );
 };

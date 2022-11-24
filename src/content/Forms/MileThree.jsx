@@ -37,7 +37,7 @@ const MileThree = () => {
       }}
     >
       <CardHeader
-        title="Milestone 3"
+        title="Milestone 3 ( 10C Reward )"
         subheader="Share with us and earn rewards !"
       />
       <CardContent>

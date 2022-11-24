@@ -37,7 +37,7 @@ const MileTwo = () => {
       }}
     >
       <CardHeader
-        title="Made a contribution to saving Energy ?( Mile 2 )"
+        title="Made a contribution to saving Energy ?( Mile 2: 10C Reward )"
         subheader="Share with us and earn rewards !"
       />
       <CardContent>
