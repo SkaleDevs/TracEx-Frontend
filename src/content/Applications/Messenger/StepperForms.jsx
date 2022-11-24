@@ -111,7 +111,7 @@ export default function StepperForms() {
             <Card
               elevation={2}
               sx={{
-                minHeight: '500px',
+                minHeight: '10rem',
                 paddingY: '1rem',
                 justifyContent: 'center',
                 justifyItems: 'center',
@@ -156,29 +156,31 @@ export default function StepperForms() {
                         id="outlined-basic"
                         label="Expected Implementation Time"
                         variant="outlined"
-                        InputProps={{
-                          startAdornment: (
-                            <InputAdornment position="start">
-                              <AccessTimeIcon />
-                            </InputAdornment>
-                          )
-                        }}
+                        type="time"
                       />
                     </FormControl>
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <FormControl fullWidth>
                       <TextField
-                        id="outlined-basic"
-                        label="Expected Implementation Time"
-                        variant="outlined"
-                        InputProps={{
-                          startAdornment: (
-                            <InputAdornment position="start">
-                              <AccessTimeIcon />
-                            </InputAdornment>
-                          )
+                        id="date"
+                        label="Date"
+                        type="date"
+                        defaultValue="2022-11-24"
+                        InputLabelProps={{
+                          shrink: true
                         }}
+                      />
+                    </FormControl>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <FormControl fullWidth>
+                      <TextField
+                        multiline
+                        maxRows={4}
+                        id="date"
+                        label="Details ( optional )"
+                        placeholder="Want to share your contribution experience? Go ahead !"
                       />
                     </FormControl>
                   </Grid>

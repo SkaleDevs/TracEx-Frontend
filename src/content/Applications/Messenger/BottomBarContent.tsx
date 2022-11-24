@@ -9,7 +9,6 @@ import {
   useTheme
 } from '@mui/material';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
-import AttachFileTwoToneIcon from '@mui/icons-material/AttachFileTwoTone';
 import SendTwoToneIcon from '@mui/icons-material/SendTwoTone';
 
 const MessageInputWrapper = styled(InputBase)(
@@ -41,9 +40,6 @@ function BottomBarContent() {
         p: 2
       }}
     >
-      <Box>
-        
-      </Box>
       <Box flexGrow={1} display="flex" alignItems="center">
         <Avatar
           sx={{ display: { xs: 'none', sm: 'flex' }, mr: 1 }}
@@ -52,19 +48,11 @@ function BottomBarContent() {
         />
         <MessageInputWrapper
           autoFocus
-          placeholder="Write your message here..."
+          placeholder="Heyy! Why not tell us more about your contribution here..."
           fullWidth
         />
       </Box>
       <Box>
-        {/* <Tooltip arrow placement="top" title="Choose an emoji">
-          <IconButton
-            sx={{ fontSize: theme.typography.pxToRem(16) }}
-            color="primary"
-          >
-            😀
-          </IconButton>
-        </Tooltip> */}
         <Input accept="image/*" id="messenger-upload-file" type="file" />
         <Tooltip arrow placement="top" title="Attach a file">
           <label htmlFor="messenger-upload-file">
