@@ -64,11 +64,20 @@ function Overview() {
                   color="error"
                   sx={{ ml: 2, background: '#FEBE8C'}}
                 >
+                  Dashboard
+                </Button>
+                <Button
+                  component={Link}
+                  href="/login"
+                  variant="contained"
+                  color="error"
+                  sx={{ ml: 2, background: '#FEBE8C'}}
+                >
                   Login
                 </Button>
                 <Button
                   component={Link}
-                  href="/dashboards/crypto"
+                  href="/register"
                   variant="outlined"
                   color= "error"
                   sx={{ ml: 2, color: '#FEBE8C' }}
