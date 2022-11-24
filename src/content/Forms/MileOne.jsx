@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
@@ -25,6 +25,13 @@ import {
 } from '@mui/material';
 
 const MileOne = () => {
+  const [schemeName, setSchemeName] = useState();
+  const [grantedFund, setGrantedFund] = useState();
+  const [expectedImplementationTime, setExpectedImplementationTime] =
+    useState();
+  const [date, setDate] = useState();
+  const [details, setDetails] = useState();
+
   return (
     <Card
       elevation={2}
@@ -47,7 +54,12 @@ const MileOne = () => {
           <Grid item xs={12} sm={6}>
             <FormControl fullWidth>
               <InputLabel id="scheme">Scheme Name</InputLabel>
-              <Select labelId="scheme" id="scheme" label="Scheme Name">
+              <Select
+                labelId="scheme"
+                id="scheme"
+                label="Scheme Name"
+                onChange={(e) => setSchemeName(e.target.value)}
+              >
                 <MenuItem value="AJAY Phase-3">AJAY Phase-3</MenuItem>
               </Select>
             </FormControl>
@@ -58,6 +70,7 @@ const MileOne = () => {
                 id="outlined-basic"
                 label="Granted Fund"
                 variant="outlined"
+                onChange={(e) => setGrantedFund(e.target.value)}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
@@ -74,6 +87,7 @@ const MileOne = () => {
                 id="outlined-basic"
                 label="Expected Implementation Time"
                 variant="outlined"
+                onChange={(e) => setExpectedImplementationTime(e.target.value)}
               />
             </FormControl>
           </Grid>
@@ -87,18 +101,20 @@ const MileOne = () => {
                 InputLabelProps={{
                   shrink: true
                 }}
+                onChange={(e) => setDate(e.target.value)}
               />
             </FormControl>
           </Grid>
-          <Grid item xs={12} sm={6}></Grid>
+          {/* <Grid item xs={12} sm={6}></Grid> */}
           <Grid item xs={12}>
             <FormControl fullWidth>
               <TextField
                 multiline
                 maxRows={4}
-                id="date"
+                id="details"
                 label="Details ( optional )"
                 placeholder="Want to share your contribution experience? Go ahead !"
+                onChange={(e) => setDetails(e.target.value)}
               />
             </FormControl>
           </Grid>

@@ -89,7 +89,7 @@ export default function StepperForms() {
       <Typography variant="h3"> Share your contributions ! </Typography>
       <Typography variant="subtitle1">
         {' '}
-        Did you complete these Milestones ?{' '}
+        Did you complete these Milestones for Offgrid and Decentralized Solar PV Applications Programme - Phase III ?{' '}
       </Typography>
       <Stepper nonLinear activeStep={activeStep}>
         {steps.map((label, index) => (

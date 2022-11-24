@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
@@ -12,6 +12,7 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 import {
   Card,
+  CardActions,
   CardContent,
   CardHeader,
   FormControl,
@@ -24,6 +25,12 @@ import {
 } from '@mui/material';
 
 const MileThree = () => {
+  const [schemeName, setSchemeName] = useState();
+  const [grantedFund, setGrantedFund] = useState();
+  const [expectedImplementationTime, setExpectedImplementationTime] =
+    useState();
+  const [date, setDate] = useState();
+  const [details, setDetails] = useState();
   return (
     <Card
       elevation={2}
@@ -103,6 +110,9 @@ const MileThree = () => {
           </Grid>
         </Grid>
       </CardContent>
+      <CardActions>
+        <Button>Submit</Button>
+      </CardActions>
     </Card>
   );
 };
