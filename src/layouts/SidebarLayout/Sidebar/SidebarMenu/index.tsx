@@ -208,7 +208,7 @@ function SidebarMenu() {
                     onClick={closeSidebar}
                     startIcon={<BrightnessLowTwoToneIcon />}
                   >
-                    Energy Usage
+                    Home
                   </Button>
                 </NextLink>
               </ListItem>
@@ -253,7 +253,7 @@ function SidebarMenu() {
                     onClick={closeSidebar}
                     startIcon={<TableChartTwoToneIcon />}
                   >
-                    Transactions List
+                    Contributions
                   </Button>
                 </NextLink>
               </ListItem>

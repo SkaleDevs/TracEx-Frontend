@@ -11,6 +11,8 @@ import AccountBalance from '@/content/Dashboards/Crypto/AccountBalance';
 import Wallets from '@/content/Dashboards/Crypto/Wallets';
 import AccountSecurity from '@/content/Dashboards/Crypto/AccountSecurity';
 import WatchList from '@/content/Dashboards/Crypto/WatchList';
+import BottomBarContent from '@/content/Applications/Messenger/BottomBarContent';
+import StepperForms from '@/content/Applications/Messenger/StepperForms';
 
 function DashboardCrypto() {
   return (
@@ -32,14 +34,20 @@ function DashboardCrypto() {
           <Grid item xs={12}>
             <AccountBalance />
           </Grid>
-          <Grid item lg={8} xs={12}>
+          {/* <Grid item lg={8} xs={12}>
             <Wallets />
           </Grid>
           <Grid item lg={4} xs={12}>
             <AccountSecurity />
+          </Grid> */}
+          <Grid item xs={12}>
+            {/* <WatchList /> */}
           </Grid>
           <Grid item xs={12}>
-            <WatchList />
+            <BottomBarContent />
+          </Grid>
+          <Grid item xs={12}>
+            <StepperForms />
           </Grid>
         </Grid>
       </Container>

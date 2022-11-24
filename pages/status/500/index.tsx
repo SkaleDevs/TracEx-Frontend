@@ -117,16 +117,14 @@ function Status500() {
               <Container maxWidth="sm">
                 <Box textAlign="center">
                   <TypographyPrimary variant="h1" sx={{ my: 2 }}>
-                    Tokyo Free White Next.js Typescript Admin Dashboard
+                    Urja App
                   </TypographyPrimary>
                   <TypographySecondary
                     variant="h4"
                     fontWeight="normal"
                     sx={{ mb: 4 }}
                   >
-                    High performance React template built with lots of powerful
-                    Material-UI components across multiple product niches for
-                    fast & perfect apps development processes.
+                    An energy conservation monitoring application
                   </TypographySecondary>
                   <Button href="/" size="large" variant="contained">
                     Overview

@@ -8,6 +8,7 @@ import {
   InputBase,
   useTheme
 } from '@mui/material';
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import AttachFileTwoToneIcon from '@mui/icons-material/AttachFileTwoTone';
 import SendTwoToneIcon from '@mui/icons-material/SendTwoTone';
 
@@ -27,8 +28,8 @@ function BottomBarContent() {
   const theme = useTheme();
 
   const user = {
-    name: 'Catherine Pike',
-    avatar: '/static/images/avatars/1.jpg'
+    name: 'Sudhanshu',
+    avatar: '/static/images/avatars/profile.jpg'
   };
 
   return (
@@ -40,6 +41,9 @@ function BottomBarContent() {
         p: 2
       }}
     >
+      <Box>
+        
+      </Box>
       <Box flexGrow={1} display="flex" alignItems="center">
         <Avatar
           sx={{ display: { xs: 'none', sm: 'flex' }, mr: 1 }}
@@ -53,19 +57,19 @@ function BottomBarContent() {
         />
       </Box>
       <Box>
-        <Tooltip arrow placement="top" title="Choose an emoji">
+        {/* <Tooltip arrow placement="top" title="Choose an emoji">
           <IconButton
             sx={{ fontSize: theme.typography.pxToRem(16) }}
             color="primary"
           >
             😀
           </IconButton>
-        </Tooltip>
+        </Tooltip> */}
         <Input accept="image/*" id="messenger-upload-file" type="file" />
         <Tooltip arrow placement="top" title="Attach a file">
           <label htmlFor="messenger-upload-file">
             <IconButton sx={{ mx: 1 }} color="primary" component="span">
-              <AttachFileTwoToneIcon fontSize="small" />
+              <AddPhotoAlternateIcon fontSize="small" />
             </IconButton>
           </label>
         </Tooltip>

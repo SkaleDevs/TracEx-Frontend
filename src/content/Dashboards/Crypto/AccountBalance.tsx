@@ -73,7 +73,7 @@ function AccountBalance() {
         }
       }
     },
-    colors: ['#ff9900', '#1c81c2', '#333', '#5c6ac0'],
+    colors: ['#ff9900', '#1c81c2', '#FFF6BF', '#5c6ac0'],
     dataLabels: {
       enabled: true,
       formatter: function (val) {
@@ -110,7 +110,12 @@ function AccountBalance() {
     fill: {
       opacity: 1
     },
-    labels: ['Bitcoin', 'Ripple', 'Cardano', 'Ethereum'],
+    labels: [
+      'AJAY: Phase-II',
+      'Offgrid and Decentralized Solar PV Applications Programme - Phase III',
+      'PM KUSUM',
+      '7 million solar study lamp scheme for school going children'
+    ],
     legend: {
       labels: {
         colors: theme.colors.alpha.trueWhite[100]
@@ -138,19 +143,19 @@ function AccountBalance() {
               }}
               variant="h4"
             >
-              Account Balance
+              Credit Balance
             </Typography>
             <Box>
               <Typography variant="h1" gutterBottom>
-                $54,584.23
+                500 C
               </Typography>
-              <Typography
+              {/* <Typography
                 variant="h4"
                 fontWeight="normal"
                 color="text.secondary"
               >
                 1.0045983485234 BTC
-              </Typography>
+              </Typography> */}
               <Box
                 display="flex"
                 sx={{
@@ -167,14 +172,14 @@ function AccountBalance() {
                   <TrendingUp fontSize="large" />
                 </AvatarSuccess>
                 <Box>
-                  <Typography variant="h4">+ $3,594.00</Typography>
+                  <Typography variant="h4">+ 50 C</Typography>
                   <Typography variant="subtitle2" noWrap>
                     this month
                   </Typography>
                 </Box>
               </Box>
             </Box>
-            <Grid container spacing={3}>
+            {/* <Grid container spacing={3}>
               <Grid sm item>
                 <Button fullWidth variant="outlined">
                   Send
@@ -185,7 +190,7 @@ function AccountBalance() {
                   Receive
                 </Button>
               </Grid>
-            </Grid>
+            </Grid> */}
           </Box>
         </Grid>
         <Grid
@@ -232,15 +237,15 @@ function AccountBalance() {
                 >
                   <ListItem disableGutters>
                     <ListItemAvatarWrapper>
-                      <img
+                      {/* <img
                         alt="BTC"
                         src="/static/images/placeholders/logo/bitcoin.png"
-                      />
+                      /> */}
                     </ListItemAvatarWrapper>
                     <ListItemText
-                      primary="BTC"
+                      primary="AJAY: Phase-II"
                       primaryTypographyProps={{ variant: 'h5', noWrap: true }}
-                      secondary="Bitcoin"
+                      secondary="Atal Jyoti Yojana"
                       secondaryTypographyProps={{
                         variant: 'subtitle2',
                         noWrap: true
@@ -255,15 +260,15 @@ function AccountBalance() {
                   </ListItem>
                   <ListItem disableGutters>
                     <ListItemAvatarWrapper>
-                      <img
+                      {/* <img
                         alt="XRP"
                         src="/static/images/placeholders/logo/ripple.png"
-                      />
+                      /> */}
                     </ListItemAvatarWrapper>
                     <ListItemText
-                      primary="XRP"
+                      primary="Offgrid and Decentralized Solar PV Applications Programme - Phase III"
                       primaryTypographyProps={{ variant: 'h5', noWrap: true }}
-                      secondary="Ripple"
+                      secondary=""
                       secondaryTypographyProps={{
                         variant: 'subtitle2',
                         noWrap: true
@@ -278,15 +283,15 @@ function AccountBalance() {
                   </ListItem>
                   <ListItem disableGutters>
                     <ListItemAvatarWrapper>
-                      <img
+                      {/* <img
                         alt="ADA"
                         src="/static/images/placeholders/logo/cardano.png"
-                      />
+                      /> */}
                     </ListItemAvatarWrapper>
                     <ListItemText
-                      primary="ADA"
+                      primary="PM KUSUM"
                       primaryTypographyProps={{ variant: 'h5', noWrap: true }}
-                      secondary="Cardano"
+                      secondary=""
                       secondaryTypographyProps={{
                         variant: 'subtitle2',
                         noWrap: true
@@ -301,15 +306,15 @@ function AccountBalance() {
                   </ListItem>
                   <ListItem disableGutters>
                     <ListItemAvatarWrapper>
-                      <img
+                      {/* <img
                         alt="ETH"
                         src="/static/images/placeholders/logo/ethereum.png"
-                      />
+                      /> */}
                     </ListItemAvatarWrapper>
                     <ListItemText
-                      primary="ETH"
+                      primary="7 million solar study lamp scheme for school going children"
                       primaryTypographyProps={{ variant: 'h5', noWrap: true }}
-                      secondary="Ethereum"
+                      secondary=""
                       secondaryTypographyProps={{
                         variant: 'subtitle2',
                         noWrap: true

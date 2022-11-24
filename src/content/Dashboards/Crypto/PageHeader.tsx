@@ -3,8 +3,8 @@ import { useTheme } from '@mui/material/styles';
 
 function PageHeader() {
   const user = {
-    name: 'Catherine Pike',
-    avatar: '/static/images/avatars/1.jpg'
+    name: 'Sudhanshu',
+    avatar: '/static/images/avatars/profile.jpg'
   };
   const theme = useTheme();
 
