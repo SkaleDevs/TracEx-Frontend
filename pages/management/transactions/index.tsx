@@ -17,7 +17,7 @@ function ApplicationsTransactions() {
         <PageHeader />
       </PageTitleWrapper>
       <Container maxWidth="lg">
-        <Grid
+        {/* <Grid
           container
           direction="row"
           justifyContent="center"
@@ -27,7 +27,7 @@ function ApplicationsTransactions() {
           <Grid item xs={12}>
             <RecentOrders />
           </Grid>
-        </Grid>
+        </Grid> */}
       </Container>
       <Footer />
     </>

@@ -43,9 +43,9 @@ function DashboardCrypto() {
           <Grid item xs={12}>
             {/* <WatchList /> */}
           </Grid>
-          <Grid item xs={12}>
+          {/* <Grid item xs={12}>
             <BottomBarContent />
-          </Grid>
+          </Grid> */}
           <Grid item xs={12}>
             <StepperForms />
           </Grid>

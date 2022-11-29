@@ -255,7 +255,7 @@ function AccountBalance() {
                       <Typography align="right" variant="h4" noWrap>
                         20%
                       </Typography>
-                      <Text color="success">+2.54%</Text>
+                      {/* <Text color="success">+2.54%</Text> */}
                     </Box>
                   </ListItem>
                   <ListItem disableGutters>
@@ -278,7 +278,7 @@ function AccountBalance() {
                       <Typography align="right" variant="h4" noWrap>
                         10%
                       </Typography>
-                      <Text color="error">-1.22%</Text>
+                      {/* <Text color="error">-1.22%</Text> */}
                     </Box>
                   </ListItem>
                   <ListItem disableGutters>
@@ -301,7 +301,7 @@ function AccountBalance() {
                       <Typography align="right" variant="h4" noWrap>
                         40%
                       </Typography>
-                      <Text color="success">+10.50%</Text>
+                      {/* <Text color="success">+10.50%</Text> */}
                     </Box>
                   </ListItem>
                   <ListItem disableGutters>
@@ -324,7 +324,7 @@ function AccountBalance() {
                       <Typography align="right" variant="h4" noWrap>
                         30%
                       </Typography>
-                      <Text color="error">-12.38%</Text>
+                      {/* <Text color="error">-12.38%</Text> */}
                     </Box>
                   </ListItem>
                 </List>
