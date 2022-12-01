@@ -1,13 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ethers } from 'ethers';
 import SupplyChainAbi from '../../lib/SupplyChainAbi';
 
-const web3 = new Web3(Web3.givenProvider);
-
 const TestWeb3 = () => {
   const addProduct = async () => {
-    const { ethereum } = window;
-    const provider = new ethers.providers.Web3Provider(ethereum);
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const SupplyChainContract = new ethers.Contract(
       '0x0978C8E89849a673BdE627A031574c048a4ac293',
@@ -15,10 +12,29 @@ const TestWeb3 = () => {
       signer
     );
 
-    // let products = await
+    let products = await SupplyChainContract.addProduct(
+      'Vaccine 1',
+      'shreya',
+      '0x474d4B268F28584179d12B7CCB7A8A886D5A0fd7',
+      12345,
+      12346,
+      false,
+      15000,
+      'SGXxdegshrgfsr',
+      'DHfgft',
+      0,
+      'fhcgfchd',
+      'dghxfdxc',
+      ['gdx', 'FHC'],
+      ['GFc', 'hfdxc']
+    );
+    console.log("Hoo");
   };
+  // useEffect(() => {
+  //   addProduct();
+  // }, []);
 
-  return <></>;
+  return <div><button onClick={addProduct}>Add</button></div>;
 };
 
 export default TestWeb3;
