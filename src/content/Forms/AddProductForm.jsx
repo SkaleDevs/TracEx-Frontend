@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { ethers } from 'ethers';
+import SupplyChain from '../../../lib/SupplyChainAbi.json';
+
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
@@ -58,13 +61,44 @@ const AddProductForm = () => {
     compositionItemThree
   );
 
-  const submitHandler = () => {
+  const submitHandler = async () => {
     setCompositionItems(
       compositionItemOne,
       compositionItemTwo,
       compositionItemThree
     );
     setSideEffects(sideEffectOne, sideEffectTwo, sideEffectThree);
+
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const SupplyChainContract = new ethers.Contract(
+      '0x555DC487782738CbC7f7c463045657085B8aaAe4',
+      SupplyChain.abi,
+      signer
+    );
+
+    const products = await SupplyChainContract.addProduct(
+      [
+        manufacturerName,
+        manufacturerName,
+        '0x616225F50fA2b77F5e8e592468fa1cE37ba46a3a',
+        manufacturingDate,
+        expiryDate,
+        false,
+        4000,
+        'SGXxdegshrgfsr',
+        productImage,
+        productType,
+        scientificName,
+        usage,
+        compositionItems,
+        sideEffects
+      ],
+      manufacturingDate,
+      {
+        gasLimit: 5000000
+      }
+    );
   };
 
   return (
@@ -79,23 +113,9 @@ const AddProductForm = () => {
         width: '100%'
       }}
     >
-      <CardHeader title="Main Information" />
+      <CardHeader title="Main Information" subheader="Add Product" />
       <CardContent>
-        {/* <form method="post" onSubmit={(e) => e.preventDefault()}> */}
         <Grid container spacing={2}>
-          {/* <Grid item xs={12} sm={6}>
-            <FormControl fullWidth>
-              <InputLabel id="scheme">Scheme Name</InputLabel>
-              <Select
-                labelId="scheme"
-                id="scheme"
-                label="Scheme Name"
-                onChange={(e) => setSchemeName(e.target.value)}
-              >
-                <MenuItem value="AJAY Phase-3">AJAY Phase-3</MenuItem>
-              </Select>
-            </FormControl>
-          </Grid> */}
           <Grid item xs={12} sm={6}>
             <FormControl fullWidth>
               <TextField
