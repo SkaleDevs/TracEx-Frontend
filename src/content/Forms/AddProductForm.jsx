@@ -127,7 +127,7 @@ const AddProductForm = () => {
           </Grid>
           <Grid item xs={12} sm={6}>
             <FormControl fullWidth>
-              <InputLabel id="scheme"></InputLabel>
+              <InputLabel id="productType">Choose Product Type</InputLabel>
               <Select
                 labelId="productType"
                 id="productType"
@@ -139,7 +139,7 @@ const AddProductForm = () => {
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} sm={6}>
             <FormControl fullWidth>
               <TextField
                 multiline
@@ -149,21 +149,21 @@ const AddProductForm = () => {
               />
             </FormControl>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} sm={6}>
             <FormControl fullWidth>
               <TextField
                 multiline
                 maxRows={4}
                 label="Product Image"
-                placeholder='Insert image URL'
+                helperText='Insert image URL'
                 onChange={(e) => setDetails(e.target.value)}
               />
             </FormControl>
           </Grid>
-          <Typography variant="title">General Information</Typography>
+          {/* <Typography variant="title">General Information</Typography> */}
           <Grid item xs={12} sm={6}>
             <FormControl fullWidth>
-              <InputLabel id="scheme"></InputLabel>
+              <InputLabel id="scheme">Type</InputLabel>
               <Select
                 labelId="Type"
                 id="Type"
