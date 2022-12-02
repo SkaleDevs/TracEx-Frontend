@@ -24,7 +24,7 @@ import {
   TextField
 } from '@mui/material';
 
-const MileOne = () => {
+const AddProductForm = () => {
   const [schemeName, setSchemeName] = useState();
   const [grantedFund, setGrantedFund] = useState();
   const [expectedImplementationTime, setExpectedImplementationTime] =
@@ -51,7 +51,7 @@ const MileOne = () => {
       <CardContent>
         {/* <form method="post" onSubmit={(e) => e.preventDefault()}> */}
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={6}>
+          {/* <Grid item xs={12} sm={6}>
             <FormControl fullWidth>
               <InputLabel id="scheme">Scheme Name</InputLabel>
               <Select
@@ -63,21 +63,14 @@ const MileOne = () => {
                 <MenuItem value="AJAY Phase-3">AJAY Phase-3</MenuItem>
               </Select>
             </FormControl>
-          </Grid>
+          </Grid> */}
           <Grid item xs={12} sm={6}>
             <FormControl fullWidth>
               <TextField
                 id="outlined-basic"
-                label="Granted Fund"
+                label="Manufacturer Name"
                 variant="outlined"
                 onChange={(e) => setGrantedFund(e.target.value)}
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <CurrencyRupeeIcon />
-                    </InputAdornment>
-                  )
-                }}
               />
             </FormControl>
           </Grid>
@@ -85,9 +78,10 @@ const MileOne = () => {
             <FormControl fullWidth>
               <TextField
                 id="outlined-basic"
-                label="Expected Implementation Time"
+                label="Manufacturer Email"
                 variant="outlined"
-                onChange={(e) => setExpectedImplementationTime(e.target.value)}
+                type="email"
+                onChange={(e) => setGrantedFund(e.target.value)}
               />
             </FormControl>
           </Grid>
@@ -95,7 +89,8 @@ const MileOne = () => {
             <FormControl fullWidth>
               <TextField
                 id="date"
-                label="Date"
+                label="Manufacturer Date"
+                helperText="dd/MM/yyyy"
                 type="date"
                 defaultValue="2022-11-24"
                 InputLabelProps={{
@@ -105,26 +100,88 @@ const MileOne = () => {
               />
             </FormControl>
           </Grid>
-          {/* <Grid item xs={12} sm={6}></Grid> */}
+          <Grid item xs={12} sm={6}>
+            <FormControl fullWidth>
+              <TextField
+                id="date"
+                label="Expires In (days)"
+                helperText="dd/MM/yyyy"
+                type="date"
+                defaultValue="2022-11-24"
+                InputLabelProps={{
+                  shrink: true
+                }}
+                onChange={(e) => setDate(e.target.value)}
+              />
+            </FormControl>
+          </Grid>
           <Grid item xs={12}>
             <FormControl fullWidth>
               <TextField
                 multiline
                 maxRows={4}
-                id="details"
-                label="Details ( optional )"
-                placeholder="Want to share your contribution experience? Go ahead !"
+                label="Product Name"
                 onChange={(e) => setDetails(e.target.value)}
               />
+            </FormControl>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <FormControl fullWidth>
+              <InputLabel id="scheme"></InputLabel>
+              <Select
+                labelId="productType"
+                id="productType"
+                label="Choose Product Type"
+                onChange={(e) => setSchemeName(e.target.value)}
+              >
+                <MenuItem value="Individual">Individual</MenuItem>
+                <MenuItem value="Batch">Batch</MenuItem>
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid item xs={12}>
+            <FormControl fullWidth>
+              <TextField
+                multiline
+                maxRows={4}
+                label="Product ID"
+                onChange={(e) => setDetails(e.target.value)}
+              />
+            </FormControl>
+          </Grid>
+          <Grid item xs={12}>
+            <FormControl fullWidth>
+              <TextField
+                multiline
+                maxRows={4}
+                label="Product Image"
+                placeholder='Insert image URL'
+                onChange={(e) => setDetails(e.target.value)}
+              />
+            </FormControl>
+          </Grid>
+          <Typography variant="title">General Information</Typography>
+          <Grid item xs={12} sm={6}>
+            <FormControl fullWidth>
+              <InputLabel id="scheme"></InputLabel>
+              <Select
+                labelId="Type"
+                id="Type"
+                label="Type"
+                onChange={(e) => setSchemeName(e.target.value)}
+              >
+                <MenuItem value="Type 1">Type 1</MenuItem>
+                <MenuItem value="Type 2">Type 2</MenuItem>
+              </Select>
             </FormControl>
           </Grid>
         </Grid>
       </CardContent>
       <CardActions>
-        <Button>Submit</Button>
+        <Button sx={{ flex: 1 }}>Submit</Button>
       </CardActions>
     </Card>
   );
 };
 
-export default MileOne;
+export default AddProductForm;

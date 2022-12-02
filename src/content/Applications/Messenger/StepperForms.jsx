@@ -22,7 +22,7 @@ import {
   Select,
   TextField
 } from '@mui/material';
-import MileOne from '@/content/Forms/MileOne';
+import AddProductForm from '@/content/Forms/AddProductForm';
 import MileTwo from '@/content/Forms/MileTwo';
 import MileThree from '@/content/Forms/MileThree';
 
@@ -32,7 +32,7 @@ const steps = [
   'Installation of one solar power plant of individual size up to 25 kWp '
 ];
 
-const milestoneForms = [<MileOne />, <MileTwo />, <MileThree />];
+const milestoneForms = [<AddProductForm />, <MileTwo />, <MileThree />];
 
 export default function StepperForms() {
   const [activeStep, setActiveStep] = React.useState(0);

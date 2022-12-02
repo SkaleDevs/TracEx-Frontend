@@ -4,20 +4,19 @@ import PageHeader from '@/content/Management/Transactions/PageHeader';
 import PageTitleWrapper from '@/components/PageTitleWrapper';
 import { Grid, Container } from '@mui/material';
 import Footer from '@/components/Footer';
-
-import RecentOrders from '@/content/Management/Transactions/RecentOrders';
+import AddProductForm from '@/content/Forms/AddProductForm';
 
 function ApplicationsTransactions() {
   return (
     <>
       <Head>
-        <title>Transactions - Applications</title>
+        <title>Shipment Details</title>
       </Head>
       <PageTitleWrapper>
         <PageHeader />
       </PageTitleWrapper>
       <Container maxWidth="lg">
-        {/* <Grid
+        <Grid
           container
           direction="row"
           justifyContent="center"
@@ -25,9 +24,9 @@ function ApplicationsTransactions() {
           spacing={3}
         >
           <Grid item xs={12}>
-            <RecentOrders />
+            <AddProductForm />
           </Grid>
-        </Grid> */}
+        </Grid>
       </Container>
       <Footer />
     </>
