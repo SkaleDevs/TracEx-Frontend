@@ -1,37 +1,49 @@
-import { Typography, Avatar, Grid } from '@mui/material';
+import { Typography, Avatar, Grid, styled, Button } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import ProgressLocationBar from '@/content/Dashboards/Crypto/ProgressLocationBar';
 
-function PageHeader() {
-  const user = {
-    name: 'Sudhanshu',
-    avatar: '/static/images/avatars/profile.jpg'
-  };
+function PageHeader({ title, subtitle, user }) {
   const theme = useTheme();
 
   return (
-    <Grid container alignItems="center">
-      <Grid item>
-        <Avatar
-          sx={{
-            mr: 2,
-            width: theme.spacing(8),
-            height: theme.spacing(8)
-          }}
-          variant="rounded"
-          alt={user.name}
-          src={user.avatar}
+    <Grid container alignItems="center" justifyContent="center">
+      <Grid item lg={12}>
+        {/* <Grid item lg={4}>
+          <Avatar
+            sx={{
+              mr: 2,
+              width: theme.spacing(8),
+              height: theme.spacing(8)
+            }}
+            variant="rounded"
+            alt={user.name}
+            src={user.avatar}
+          />
+        </Grid> */}
+        <Heading textContent={{ title: title, subtitle: subtitle }} />
+      </Grid>
+      <Grid item lg={12}>
+        <ProgressLocationBar
+          activeStepValue={3}
+          shipmentCurrentHashValue="dummy hash"
         />
       </Grid>
-      <Grid item>
-        <Typography variant="h3" component="h3" gutterBottom>
-          Welcome, {user.name}!
-        </Typography>
-        <Typography variant="subtitle2">
-          Monitor your energy conservation efforts !
-        </Typography>
+      <Grid item lg={12} justifyContent="center">
+        <Button>Dummy</Button>
       </Grid>
     </Grid>
   );
 }
+
+const Heading = ({ textContent: { title, subtitle } }) => (
+  <>
+    <Typography variant="h3" component="h3" gutterBottom align="center">
+      {title}
+    </Typography>
+    <Typography variant="subtitle2" align="center">
+      {subtitle}
+    </Typography>
+  </>
+);
 
 export default PageHeader;

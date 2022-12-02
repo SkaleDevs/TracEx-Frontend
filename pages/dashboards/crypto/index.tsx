@@ -13,17 +13,26 @@ import AccountSecurity from '@/content/Dashboards/Crypto/AccountSecurity';
 import WatchList from '@/content/Dashboards/Crypto/WatchList';
 import BottomBarContent from '@/content/Applications/Messenger/BottomBarContent';
 import StepperForms from '@/content/Applications/Messenger/StepperForms';
+import ProgressLocationBar from '@/content/Dashboards/Crypto/ProgressLocationBar';
 
 function DashboardCrypto() {
+  const user = {
+    name: 'Shipper',
+    avatar: '/static/images/avatars/profile.jpg'
+  };
+
+  const title = `Welcome back, ${user.name}!`;
+  const subtitle = `Updates on the latest shipment`;
+
   return (
     <>
       <Head>
-        <title>Urja Dashboard</title>
+        <title>TracEx Dashboard</title>
       </Head>
       <PageTitleWrapper>
-        <PageHeader />
+        <PageHeader title={title} subtitle={subtitle} user={user} />
       </PageTitleWrapper>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" className="container">
         <Grid
           container
           direction="row"
