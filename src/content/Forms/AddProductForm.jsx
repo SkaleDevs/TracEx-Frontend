@@ -118,8 +118,6 @@ const AddProductForm = () => {
           <Grid item xs={12}>
             <FormControl fullWidth>
               <TextField
-                multiline
-                maxRows={4}
                 label="Product Name"
                 onChange={(e) => setDetails(e.target.value)}
               />
@@ -142,8 +140,6 @@ const AddProductForm = () => {
           <Grid item xs={12} sm={6}>
             <FormControl fullWidth>
               <TextField
-                multiline
-                maxRows={4}
                 label="Product ID"
                 onChange={(e) => setDetails(e.target.value)}
               />
@@ -152,18 +148,18 @@ const AddProductForm = () => {
           <Grid item xs={12} sm={6}>
             <FormControl fullWidth>
               <TextField
-                multiline
-                maxRows={4}
                 label="Product Image"
-                helperText='Insert image URL'
+                helperText="Insert image URL"
                 onChange={(e) => setDetails(e.target.value)}
               />
             </FormControl>
           </Grid>
-          {/* <Typography variant="title">General Information</Typography> */}
+          <Grid item xs={12}>
+            <CardHeader title="General Information"></CardHeader>
+          </Grid>
           <Grid item xs={12} sm={6}>
             <FormControl fullWidth>
-              <InputLabel id="scheme">Type</InputLabel>
+              <InputLabel id="Type">Type</InputLabel>
               <Select
                 labelId="Type"
                 id="Type"
@@ -173,6 +169,14 @@ const AddProductForm = () => {
                 <MenuItem value="Type 1">Type 1</MenuItem>
                 <MenuItem value="Type 2">Type 2</MenuItem>
               </Select>
+            </FormControl>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <FormControl fullWidth>
+              <TextField
+                label="Scientific Name"
+                onChange={(e) => setDetails(e.target.value)}
+              />
             </FormControl>
           </Grid>
         </Grid>
