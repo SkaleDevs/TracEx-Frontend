@@ -253,7 +253,7 @@ function SidebarMenu() {
                     onClick={closeSidebar}
                     startIcon={<TableChartTwoToneIcon />}
                   >
-                    Contributions
+                    Product Details
                   </Button>
                 </NextLink>
               </ListItem>
