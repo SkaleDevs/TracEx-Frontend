@@ -36,7 +36,7 @@ const AddUserDetails = () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const SupplyChainContract = new ethers.Contract(
-      '0x90BFb6689e026011F4559E6ab8Ad0aFe642b0EDe',
+      '0xcaCB93B5E1b35CFF4b2aDfb538e29539243c554E',
       SupplyChain.abi,
       signer
     );
