@@ -61,6 +61,10 @@ const AddProductForm = () => {
     compositionItemThree
   ]);
 
+  const connectWallet = async () => {
+const accounts= await window.ethereum.request({method: 'eth_requestAccounts'});
+console.log(accounts)
+}
   const submitHandler = async () => {
     setCompositionItems([
       compositionItemOne,
@@ -72,7 +76,7 @@ const AddProductForm = () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const SupplyChainContract = new ethers.Contract(
-      '0x555DC487782738CbC7f7c463045657085B8aaAe4',
+      '0xcaCB93B5E1b35CFF4b2aDfb538e29539243c554E',
       SupplyChain.abi,
       signer
     );
@@ -84,7 +88,7 @@ const AddProductForm = () => {
       [
         manufacturerName,
         manufacturerName,
-        '0x616225F50fA2b77F5e8e592468fa1cE37ba46a3a',
+        '0x474d4B268F28584179d12B7CCB7A8A886D5A0fd7',
         // manDate.getTime(),
         // expDate.getTime(),
         123,
