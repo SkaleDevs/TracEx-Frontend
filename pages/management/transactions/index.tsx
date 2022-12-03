@@ -5,6 +5,7 @@ import PageTitleWrapper from '@/components/PageTitleWrapper';
 import { Grid, Container } from '@mui/material';
 import Footer from '@/components/Footer';
 import AddProductForm from '@/content/Forms/AddProductForm';
+import AddUserDetails from '@/content/Forms/AddUserDetails';
 
 function ApplicationsTransactions() {
   return (
@@ -25,6 +26,7 @@ function ApplicationsTransactions() {
         >
           <Grid item xs={12}>
             <AddProductForm />
+            <AddUserDetails />
           </Grid>
         </Grid>
       </Container>

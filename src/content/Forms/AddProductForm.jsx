@@ -61,11 +61,16 @@ const AddProductForm = () => {
     compositionItemThree
   ]);
 
+
   const connectWallet = async () => {
-const accounts= await window.ethereum.request({method: 'eth_requestAccounts'});
-console.log(accounts)
-}
+    const accounts = await window.ethereum.request({
+      method: 'eth_requestAccounts'
+    });
+    console.log(accounts);
+  };
+
   const submitHandler = async () => {
+    // connectWallet();
     setCompositionItems([
       compositionItemOne,
       compositionItemTwo,
@@ -82,20 +87,21 @@ console.log(accounts)
     );
     const manDate = new Date(manufacturingDate);
     const expDate = new Date(expiryDate);
-    // setSideEffects([sideEffectOne, sideEffectTwo, sideEffectThree]);
     setSideEffects([sideEffectOne, sideEffectTwo, sideEffectThree]);
+    let view = await SupplyChainContract.getUserDetails(
+      '0x474d4B268F28584179d12B7CCB7A8A886D5A0fd7'
+    );
+    console.log(view);
     const products = await SupplyChainContract.addProduct(
       [
         manufacturerName,
-        manufacturerName,
+        manufacturerEmail,
         '0x474d4B268F28584179d12B7CCB7A8A886D5A0fd7',
-        // manDate.getTime(),
-        // expDate.getTime(),
-        123,
-        123,
+        manDate.getTime(),
+        expDate.getTime(),
         false,
         4000,
-        'SGXxdegshr5fsr',
+        productId,
         productImage,
         productType == 'Batch' ? 0 : 1,
         scientificName,
@@ -116,7 +122,8 @@ console.log(accounts)
       expDate.getTime(),
       false,
       4000,
-      'SGXxdegshr5fsr',
+      // 'SGXxdegshr54fsr',
+      productId,
       productImage,
       productType,
       scientificName,
