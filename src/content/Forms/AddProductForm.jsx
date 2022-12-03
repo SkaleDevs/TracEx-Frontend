@@ -55,18 +55,18 @@ const AddProductForm = () => {
   const [compositionItemThree, setCompositionItemThree] =
     useState('Paracetamol');
 
-  const [compositionItems, setCompositionItems] = useState(
+  const [compositionItems, setCompositionItems] = useState([
     compositionItemOne,
     compositionItemTwo,
     compositionItemThree
-  );
+  ]);
 
   const submitHandler = async () => {
-    setCompositionItems(
+    setCompositionItems([
       compositionItemOne,
       compositionItemTwo,
       compositionItemThree
-    );
+    ]);
     setSideEffects(sideEffectOne, sideEffectTwo, sideEffectThree);
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -78,27 +78,47 @@ const AddProductForm = () => {
     );
     const manDate = new Date(manufacturingDate);
     const expDate = new Date(expiryDate);
+    // setSideEffects([sideEffectOne, sideEffectTwo, sideEffectThree]);
+    setSideEffects([sideEffectOne, sideEffectTwo, sideEffectThree]);
     const products = await SupplyChainContract.addProduct(
       [
         manufacturerName,
         manufacturerName,
         '0x616225F50fA2b77F5e8e592468fa1cE37ba46a3a',
-        manDate.getTime(),
-        expDate.getTime(),
+        // manDate.getTime(),
+        // expDate.getTime(),
+        123,
+        123,
         false,
         4000,
-        'SGXxdegshrgfsr',
+        'SGXxdegshr5fsr',
         productImage,
-        productType,
+        productType == 'Batch' ? 0 : 1,
         scientificName,
         usage,
         compositionItems,
         sideEffects
       ],
-      manufacturingDate,
+      manDate.getTime(),
       {
         gasLimit: 5000000
       }
+    );
+    console.log(
+      manufacturerName,
+      manufacturerName,
+      '0x616225F50fA2b77F5e8e592468fa1cE37ba46a3a',
+      manDate.getTime(),
+      expDate.getTime(),
+      false,
+      4000,
+      'SGXxdegshr5fsr',
+      productImage,
+      productType,
+      scientificName,
+      usage,
+      compositionItems,
+      sideEffects
     );
     console.log('Manf Date', manDate.getTime());
     console.log('Exp Date', expDate.getTime()); //
