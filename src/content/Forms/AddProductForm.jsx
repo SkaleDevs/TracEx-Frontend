@@ -69,21 +69,22 @@ const AddProductForm = () => {
     );
     setSideEffects(sideEffectOne, sideEffectTwo, sideEffectThree);
 
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    const SupplyChainContract = new ethers.Contract(
-      '0x555DC487782738CbC7f7c463045657085B8aaAe4',
-      SupplyChain.abi,
-      signer
-    );
-
+    // const provider = new ethers.providers.Web3Provider(window.ethereum);
+    // const signer = provider.getSigner();
+    // const SupplyChainContract = new ethers.Contract(
+    //   '0x555DC487782738CbC7f7c463045657085B8aaAe4',
+    //   SupplyChain.abi,
+    //   signer
+    // );
+      const manDate = new Date(manufacturingDate);
+      const expDate = new Date(expiryDate);
     const products = await SupplyChainContract.addProduct(
       [
         manufacturerName,
         manufacturerName,
         '0x616225F50fA2b77F5e8e592468fa1cE37ba46a3a',
-        manufacturingDate,
-        expiryDate,
+        manDate.getTime(),
+        expDate.getTime(),
         false,
         4000,
         'SGXxdegshrgfsr',
@@ -99,6 +100,8 @@ const AddProductForm = () => {
         gasLimit: 5000000
       }
     );
+    console.log("Manf Date", manDate.getTime());
+    console.log("Exp Date", expDate.getTime()); //
   };
 
   return (
@@ -143,8 +146,7 @@ const AddProductForm = () => {
                 id="date"
                 label="Manufacturer Date"
                 helperText="dd/MM/yyyy"
-                type="date"
-                defaultValue="2022-11-24"
+                type="datetime-local"
                 InputLabelProps={{
                   shrink: true
                 }}
@@ -158,8 +160,7 @@ const AddProductForm = () => {
                 id="date"
                 label="Expires In (days)"
                 helperText="dd/MM/yyyy"
-                type="date"
-                defaultValue="2022-11-24"
+                type="datetime-local"
                 InputLabelProps={{
                   shrink: true
                 }}
@@ -235,7 +236,6 @@ const AddProductForm = () => {
             <FormControl fullWidth>
               <TextField
                 label={`Side Effect 1`}
-                value={sideEffectOne}
                 onChange={(e) => setSideEffectOne(e.target.value)}
               />
             </FormControl>
@@ -244,7 +244,6 @@ const AddProductForm = () => {
             <FormControl fullWidth>
               <TextField
                 label={`Side Effect 2`}
-                value={sideEffectTwo}
                 onChange={(e) => setSideEffectTwo(e.target.value)}
               />
             </FormControl>
@@ -252,8 +251,7 @@ const AddProductForm = () => {
           <Grid item xs={12} sm={4}>
             <FormControl fullWidth>
               <TextField
-                label={`Side Effect 1`}
-                value={setSideEffectThree}
+                label={`Side Effect 3`}
                 onChange={(e) => setSideEffectThree(e.target.value)}
               />
             </FormControl>
@@ -262,7 +260,6 @@ const AddProductForm = () => {
             <FormControl fullWidth>
               <TextField
                 label={`Composition 1`}
-                value={setCompositionItemOne}
                 onChange={(e) => setCompositionItemOne(e.target.value)}
               />
             </FormControl>
@@ -271,7 +268,6 @@ const AddProductForm = () => {
             <FormControl fullWidth>
               <TextField
                 label={`Composition 2`}
-                value={setCompositionItemTwo}
                 onChange={(e) => setCompositionItemTwo(e.target.value)}
               />
             </FormControl>
@@ -280,7 +276,6 @@ const AddProductForm = () => {
             <FormControl fullWidth>
               <TextField
                 label={`Composition 1`}
-                value={setCompositionItemThree}
                 onChange={(e) => setCompositionItemThree(e.target.value)}
               />
             </FormControl>
@@ -291,7 +286,6 @@ const AddProductForm = () => {
                 multiline
                 maxRows={4}
                 label={`Usage`}
-                value={setUsage}
                 onChange={(e) => setUsage(e.target.value)}
               />
             </FormControl>
