@@ -69,15 +69,15 @@ const AddProductForm = () => {
     );
     setSideEffects(sideEffectOne, sideEffectTwo, sideEffectThree);
 
-    // const provider = new ethers.providers.Web3Provider(window.ethereum);
-    // const signer = provider.getSigner();
-    // const SupplyChainContract = new ethers.Contract(
-    //   '0x555DC487782738CbC7f7c463045657085B8aaAe4',
-    //   SupplyChain.abi,
-    //   signer
-    // );
-      const manDate = new Date(manufacturingDate);
-      const expDate = new Date(expiryDate);
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const SupplyChainContract = new ethers.Contract(
+      '0x555DC487782738CbC7f7c463045657085B8aaAe4',
+      SupplyChain.abi,
+      signer
+    );
+    const manDate = new Date(manufacturingDate);
+    const expDate = new Date(expiryDate);
     const products = await SupplyChainContract.addProduct(
       [
         manufacturerName,
@@ -100,8 +100,8 @@ const AddProductForm = () => {
         gasLimit: 5000000
       }
     );
-    console.log("Manf Date", manDate.getTime());
-    console.log("Exp Date", expDate.getTime()); //
+    console.log('Manf Date', manDate.getTime());
+    console.log('Exp Date', expDate.getTime()); //
   };
 
   return (
