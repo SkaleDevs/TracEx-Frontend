@@ -302,6 +302,23 @@ function SidebarMenu() {
                   </Button>
                 </NextLink>
               </ListItem>
+              <ListItem component="div">
+                <NextLink href="/management/profile/Notifications" passHref>
+                  <Button
+                    className={
+                      currentRoute === '/management/profile/Notifications'
+                        ? 'active'
+                        : ''
+                    }
+                    disableRipple
+                    component="a"
+                    onClick={closeSidebar}
+                    startIcon={<DisplaySettingsTwoToneIcon />}
+                  >
+                    Notifications
+                  </Button>
+                </NextLink>
+              </ListItem>
             </List>
           </SubMenuWrapper>
         </List>
