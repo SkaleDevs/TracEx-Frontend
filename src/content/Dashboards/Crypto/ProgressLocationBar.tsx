@@ -20,13 +20,11 @@ const TypographyModified = styled(Typography)(
 
 export default function ProgressLocationBar({
   activeStepValue,
-  shipmentCurrentHashValue
+  shipmentCurrentHashValue,
+  text,
+  fillFormBool
 }) {
-  const steps = [
-    'Received at previous station',
-    'In transit',
-    'Arrived at center'
-  ];
+  const steps = text;
 
   const activeStep = activeStepValue;
 
@@ -50,7 +48,7 @@ export default function ProgressLocationBar({
       <TypographyModified>
         Shipment Hash : {shipmentCurrentHash}
       </TypographyModified>
-      {activeStep === 3 ? <Button variant="contained">Fill form</Button> : null}
+      {activeStep === 3 && fillFormBool? <Button variant="contained">Fill form</Button> : null}
     </>
   );
 }

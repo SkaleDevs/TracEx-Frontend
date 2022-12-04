@@ -31,7 +31,7 @@ import {
 } from '@mui/material';
 
 
-const PK = ''; // channel private key
+const PK = '42b561e5aefdebc06cce4f7fcfcac285f1aae57a2f8118bdde5a814eace910ba'; // channel private key
 const Pkey = `0x${PK}`;
 const signer = new ethers.Wallet(Pkey);
 
