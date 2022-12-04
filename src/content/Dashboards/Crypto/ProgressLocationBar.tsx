@@ -1,4 +1,4 @@
-import { Typography, styled, Button } from '@mui/material';
+import { Typography, styled, Button, Box } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';

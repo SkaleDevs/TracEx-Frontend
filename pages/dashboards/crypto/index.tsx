@@ -18,6 +18,7 @@ function DashboardCrypto() {
 
   const title = `Welcome back, ${user.name}!`;
   const subtitle = `Updates on the latest shipment`;
+  const status = 2;
 
   return (
     <>
@@ -25,18 +26,8 @@ function DashboardCrypto() {
         <title>TracEx Dashboard</title>
       </Head>
       <PageTitleWrapper>
-        <PageHeader title={title} subtitle={subtitle} user={user} />
+        <PageHeader title={title} subtitle={subtitle} user={user} status={status} />
       </PageTitleWrapper>
-      <Container maxWidth="lg" className="container">
-        <Grid
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="stretch"
-          spacing={4}
-        >
-        </Grid>
-      </Container>
       <Footer />
     </>
   );

@@ -2,7 +2,7 @@ import { Typography, Avatar, Grid, styled, Button } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import ProgressLocationBar from '@/content/Dashboards/Crypto/ProgressLocationBar';
 
-function PageHeader({ title, subtitle, user }) {
+function PageHeader({ title, subtitle, user, status }) {
   const theme = useTheme();
   const text = [
     'Received at previous station',
@@ -29,14 +29,11 @@ function PageHeader({ title, subtitle, user }) {
       </Grid>
       <Grid item lg={12}>
         <ProgressLocationBar
-          activeStepValue={3}
+          activeStepValue={status}
           shipmentCurrentHashValue="dummy hash"
           text={text}
           fillFormBool={true}
         />
-      </Grid>
-      <Grid item lg={12} justifyContent="center">
-        <Button>Dummy</Button>
       </Grid>
     </Grid>
   );
