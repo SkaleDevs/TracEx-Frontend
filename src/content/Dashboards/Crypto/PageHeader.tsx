@@ -4,6 +4,11 @@ import ProgressLocationBar from '@/content/Dashboards/Crypto/ProgressLocationBar
 
 function PageHeader({ title, subtitle, user, status }) {
   const theme = useTheme();
+  const text = [
+    'Received at previous station',
+    'In transit',
+    'Arrived at center'
+  ];
 
   return (
     <Grid container alignItems="center" justifyContent="center">
@@ -26,6 +31,8 @@ function PageHeader({ title, subtitle, user, status }) {
         <ProgressLocationBar
           activeStepValue={status}
           shipmentCurrentHashValue="dummy hash"
+          text={text}
+          fillFormBool={true}
         />
       </Grid>
     </Grid>
