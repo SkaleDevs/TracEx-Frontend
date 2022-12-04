@@ -27,7 +27,7 @@ import {
   TextField
 } from '@mui/material';
 
-const AddUserDetails = () => {
+const AddVendor = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [address, setAddress] = useState();
@@ -42,9 +42,11 @@ const AddUserDetails = () => {
     );
     console.log(name, email, address);
     // const userDetails = { name, email, address };
-    let party = await SupplyChainContract.addParty([1, address, name, email], {
-      gasLimit: 5000000
-    });
+    // let party = await SupplyChainContract.addParty([2, address, name, email], {
+    //   gasLimit: 5000000
+    // });
+    const party = await SupplyChainContract.getSingleProduct('jadu');
+    console.log(party);
     // console.log(userDetails);
   };
   return (
@@ -60,7 +62,7 @@ const AddUserDetails = () => {
         width: '100%'
       }}
     >
-      <CardHeader title="Add Supplier" />
+      <CardHeader title="Add Vendor" />
       <CardContent>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
@@ -106,4 +108,4 @@ const AddUserDetails = () => {
   );
 };
 
-export default AddUserDetails;
+export default AddVendor;
