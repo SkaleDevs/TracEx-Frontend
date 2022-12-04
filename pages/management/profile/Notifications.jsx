@@ -47,7 +47,7 @@ const Notifications = () => {
       
           return (
               <NotificationItem
-                 //key="yjhf" // any unique id
+                 key="yjhf" // any unique id
                   notificationTitle={title}
                   notificationBody={message}
                   cta={cta}
