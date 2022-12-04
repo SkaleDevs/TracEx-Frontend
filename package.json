@@ -8,6 +8,7 @@
     "url": "https://bloomui.com"
   },
   "dependencies": {
+    "@biconomy/web3-auth": "^0.0.4",
     "@emotion/cache": "11.7.1",
     "@emotion/react": "11.9.0",
     "@emotion/server": "11.4.0",

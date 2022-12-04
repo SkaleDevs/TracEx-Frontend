@@ -1,125 +1,149 @@
-import React, { useRef } from 'react';
+import React, {useState, useEffect} from 'react';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
+import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import {
-  Button,
-  Card,
-  CardContent,
-  Link,
-  TextField,
-  Typography
-} from '@mui/material';
-import Image from 'next/image';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import SocialLogin from "@biconomy/web3-auth";
+import ethers from "ethers";
 
-import LoginIllustration from '/public/loginIllustration.svg';
-import logo from '/public/logo.png';
-
-const Login = () => {
-
-  const emailInputRef = useRef<HTMLInputElement>(null);
-  const passwordInputRef = useRef<HTMLInputElement>(null);
-
-  const loginHandler = () => {
-    const inputEmail = emailInputRef.current.value;
-    const inputPassword = passwordInputRef.current.value;
-
-    console.log("Email and password are:", inputEmail, inputPassword);
-  }
-
+function Copyright(props: any) {
   return (
-    <Grid
-      container
-      spacing={0}
-      direction="column"
-      alignItems="center"
-      sx={{
-        minHeight: '100vh',
-        justify: 'center',
-        justifyContent: 'center',
-        display: 'flex',
-        background: '#EFF5F5'
-      }}
-    >
-      <Grid item xs={12} sx={{ minHeight: '100vh' }}>
-        <Card
-          elevation={16}
-          sx={{
-            minWidth: '80rem',
-            minHeight: '60vh',
-            maxHeight: '65vh',
-            marginY: '10rem',
-            zIndex: 1
-          }}
-        >
-          <Grid container spacing={6} alignItems="center">
-            <Grid item xs={12} sm={6}>
-              <CardContent sx={{ display: { xs: 'none', sm: 'block' } }}>
-                <Image src={LoginIllustration} height="600px" />
-              </CardContent>
-            </Grid>
-            <Grid item xs={12} sm={6} sx={{ maxWidth: '100%' }}>
-              <Grid
-                container
-                spacing={3}
-                alignItems="center"
-                direction="column"
-                sx={{ minWidth: '100%', display: 'flex' }}
-              >
-                <Grid item sm={12}>
-                  <Typography variant="h5" align="center" alignContent="center">
-                    <Image src={logo} width={120} height={120} />
-                  </Typography>
-                  <Typography variant="h3" align="center" alignContent="center">
-                    URJA Portal Login
-                  </Typography>
-                </Grid>
-
-                {/* Login Form */}
-
-                <form
-                  noValidate
-                  autoComplete="off"
-                  onSubmit={(e) => e.preventDefault()}
-                >
-                  <Grid item sm={12}>
-                    <TextField
-                      variant="standard"
-                      label="Email Address"
-                      type="email"
-                      fullWidth
-                      placeholder="johndoe@gmail.com"
-                      required
-                      inputRef={emailInputRef}
-                      sx={{ width: '30rem', color: '#B6E2A1', marginY: '1rem' }}
-                    />
-                  </Grid>
-                  <Grid item sm={12}>
-                    <TextField
-                      variant="standard"
-                      label="Password"
-                      type="password"
-                      placeholder="Enter your password"
-                      inputRef={passwordInputRef}
-                      required
-                      fullWidth
-                      sx={{ width: '30rem', color: '#B6E2A1', marginY: '2rem' }}
-                    />
-                  </Grid>
-                  <Grid item sm={12}>
-                    <Button variant="contained" type='submit' onClick={loginHandler} fullWidth color="success" sx={{ marginY: '3rem', paddingX: '3rem' }}>
-                      Login
-                    </Button>
-                  </Grid>
-                </form>
-                <Typography variant='subtitle2' sx={{ marginTop: '-1rem' }} >
-                  Don't have an account? <Link href='/register'> Sign up for a new account </Link>
-                </Typography>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Card>
-      </Grid>
-    </Grid>
+    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+      {'Copyright © '}
+      <Link color="inherit" href="https://mui.com/">
+        TracEx
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
   );
+}
+
+const theme = createTheme();
+
+const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  event.preventDefault();
+  const data = new FormData(event.currentTarget);
+  console.log({
+    email: data.get('email'),
+    password: data.get('password'),
+  });
 };
 
-export default Login;
+const sdkinit = async () => {
+  const socialLoginSDK = new SocialLogin();
+  await socialLoginSDK.init('0x5'); // Enter the network id in hex) parameter
+  socialLoginSDK.showConnectModal();
+  // show connect modal
+  socialLoginSDK.showWallet();
+  if (!socialLoginSDK?.web3auth?.provider) return;
+  const provider = new ethers.providers.Web3Provider(
+      socialLoginSDK.web3auth.provider,
+  );
+  const accounts = await provider.listAccounts();
+  console.log("EOA address", accounts)
+}
+
+export default async function SignInSide() {
+
+  // useEffect(()=> {  
+  // if (typeof document !== 'undefined') 
+  //   sdkinit();
+  // },[])
+
+  const [user, setUser] = useState({ email: "", password: "" });
+  // init wallet
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Grid container component="main" sx={{ height: '100vh' }}>
+        <CssBaseline />
+        <Grid
+          item
+          xs={false}
+          sm={4}
+          md={7}
+          sx={{
+            backgroundImage: 'url(https://source.unsplash.com/random)',
+            backgroundRepeat: 'no-repeat',
+            backgroundColor: (t) =>
+              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+          <Box
+            sx={{
+              my: 8,
+              mx: 4,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              Sign in
+            </Typography>
+            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+              <input
+                required
+                id="email"
+                name="email"
+                autoComplete="email"
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+              />
+              <FormControlLabel
+                control={<Checkbox value="remember" color="primary" />}
+                label="Remember me"
+              />
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Sign In
+              </Button>
+              <Grid container>
+                <Grid item xs>
+                  <Link href="#" variant="body2">
+                    Forgot password?
+                  </Link>
+                </Grid>
+                <Grid item>
+                  <Link href="#" variant="body2">
+                    {"Don't have an account? Sign Up"}
+                  </Link>
+                </Grid>
+              </Grid>
+              <Copyright sx={{ mt: 5 }} />
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
+    </ThemeProvider>
+  );
+}
