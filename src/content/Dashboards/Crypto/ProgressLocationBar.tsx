@@ -1,4 +1,4 @@
-import { Typography, styled, Button } from '@mui/material';
+import { Typography, styled, Button, Box } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
@@ -50,7 +50,7 @@ export default function ProgressLocationBar({
       <TypographyModified>
         Shipment Hash : {shipmentCurrentHash}
       </TypographyModified>
-      {activeStep === 3 ? <Button variant="contained">Fill form</Button> : null}
+      {activeStep === 3 ? <Box textAlign="center"  sx={{marginTop: '1%'}}><TypographyModified sx={{color:'green'}}>Your shipment has arrived! Fill the form to proceed.</TypographyModified><Button variant="contained" sx={{marginTop: '1%'}}>Fill form</Button></Box> : null}
     </>
   );
 }
