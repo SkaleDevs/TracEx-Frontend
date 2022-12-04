@@ -1,11 +1,47 @@
-import React from 'react';
-import Web3 from 'web3';
-import { SupplyChainAbi } from '../../lib/SupplyChainAbi';
-
-const web3 = new Web3(Web3.givenProvider);
+import React, { useEffect } from 'react';
+import { ethers } from 'ethers';
+import SupplyChain from '../../lib/SupplyChainAbi.json';
 
 const TestWeb3 = () => {
-  return <div>Insert Smart Contract Interaction Object here</div>;
+  const addProduct = async () => {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const SupplyChainContract = new ethers.Contract(
+      '0x555DC487782738CbC7f7c463045657085B8aaAe4',
+      SupplyChain.abi,
+      signer
+    );
+
+    //   let products = await SupplyChainContract.addProduct([
+    //     'Vaccine 1',
+    //     'shreya',
+    //     '0x474d4B268F28584179d12B7CCB7A8A886D5A0fd7',
+    //     12345,
+    //     12346,
+    //     false,
+    //     15000,
+    //     'SGXxdegshrgfsr',
+    //     'DHfgft',
+    //     0,
+    //     'fhcgfchd',
+    //     'dghxfdxc',
+    //     ['gdx', 'FHC'],
+    //     ['GFc', 'hfdxc']
+    //   ],123456,{gasLimit: 5000000});
+    //   console.log(products);
+    // };
+    // let view = await SupplyChainContract.getAllProducts();
+    // console.log(view);
+  };
+  // useEffect(() => {
+  //   addProduct();
+  // }, []);
+
+  return (
+    <div>
+      <button onClick={addProduct}>Add</button>
+    </div>
+  );
 };
 
 export default TestWeb3;

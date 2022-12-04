@@ -13,44 +13,26 @@ import AccountSecurity from '@/content/Dashboards/Crypto/AccountSecurity';
 import WatchList from '@/content/Dashboards/Crypto/WatchList';
 import BottomBarContent from '@/content/Applications/Messenger/BottomBarContent';
 import StepperForms from '@/content/Applications/Messenger/StepperForms';
+import ProgressLocationBar from '@/content/Dashboards/Crypto/ProgressLocationBar';
 
 function DashboardCrypto() {
+  const user = {
+    name: 'Shipper',
+    avatar: '/static/images/avatars/profile.jpg'
+  };
+
+  const title = `Welcome back, ${user.name}!`;
+  const subtitle = `Updates on the latest shipment`;
+  const status = 2;
+
   return (
     <>
       <Head>
-        <title>Urja Dashboard</title>
+        <title>TracEx Dashboard</title>
       </Head>
       <PageTitleWrapper>
-        <PageHeader />
+        <PageHeader title={title} subtitle={subtitle} user={user} status={status} />
       </PageTitleWrapper>
-      <Container maxWidth="lg">
-        <Grid
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="stretch"
-          spacing={4}
-        >
-          <Grid item xs={12}>
-            <AccountBalance />
-          </Grid>
-          {/* <Grid item lg={8} xs={12}>
-            <Wallets />
-          </Grid>
-          <Grid item lg={4} xs={12}>
-            <AccountSecurity />
-          </Grid> */}
-          <Grid item xs={12}>
-            {/* <WatchList /> */}
-          </Grid>
-          {/* <Grid item xs={12}>
-            <BottomBarContent />
-          </Grid> */}
-          <Grid item xs={12}>
-            <StepperForms />
-          </Grid>
-        </Grid>
-      </Container>
       <Footer />
     </>
   );
