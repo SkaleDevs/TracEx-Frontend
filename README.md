@@ -1,8 +1,8 @@
 <h1 align="center">
     <b>Flow Chart</b>
     <br>
-       <img src=https://user-images.githubusercontent.com/74611057/205471342-62b6a694-c257-41ee-9424-66867eebc5e6.jpg/>
-       <img src=https://user-images.githubusercontent.com/74611057/205471575-302041ed-bb02-4955-8210-c128fde1bdac.jpg)/>
+       <img src="https://user-images.githubusercontent.com/74611057/205471342-62b6a694-c257-41ee-9424-66867eebc5e6.jpg"/>
+       <img src="https://user-images.githubusercontent.com/74611057/205471575-302041ed-bb02-4955-8210-c128fde1bdac.jpg"/>
     </a>
 </h1>
 <div align="center">
@@ -21,7 +21,7 @@
     Setup
 </h2>
 <ol>
-    <li>Make sure you have the latest stable versions for Node.js and NPM installed</li>
+    <li>Make surhttpse you have the latest stable versions for Node.js and NPM installed</li>
     <li>Clone repository: <code>git clone [https://github.com/SkaleDevs/TracEx-Frontend.git]</code> and <code>git clone https://github.com/SkaleDevs/Trace-Ex-Contracts</code></li>
     <li>Install dependencies: Run <code>npm install</code> inside the project folder</li>
     <li>Start dev server: After the install finishes, run <code>npm run dev</code>. A browser window will open on http://localhost:3000 where you''ll see the live preview</li>
