@@ -10,10 +10,10 @@
 <h1 align="center">
     <b>Snapshots</b>
     <br>
-       <img src=https://user-images.githubusercontent.com/74611057/205471652-a8c88052-cbce-4a00-9177-952767e18476.jpeg/>
-       <img src=https://user-images.githubusercontent.com/74611057/205471713-0e06ac93-5328-4c31-a454-d2ca26a94ecf.jpeg/>
-       <img src=https://user-images.githubusercontent.com/74611057/205471737-345dd2ca-8571-4deb-8690-bd3e3131f80e.jpeg/>
-       <img src=https://user-images.githubusercontent.com/74611057/205471759-2eef2aab-557b-4c34-8a0a-f55b96eb045a.jpeg/>
+       <img src="https://user-images.githubusercontent.com/74611057/205471652-a8c88052-cbce-4a00-9177-952767e18476.jpeg"/>
+       <img src="https://user-images.githubusercontent.com/74611057/205471713-0e06ac93-5328-4c31-a454-d2ca26a94ecf.jpeg"/>
+       <img src="https://user-images.githubusercontent.com/74611057/205471737-345dd2ca-8571-4deb-8690-bd3e3131f80e.jpeg"/>
+       <img src="https://user-images.githubusercontent.com/74611057/205471759-2eef2aab-557b-4c34-8a0a-f55b96eb045a.jpeg"/>
     </a>
 </h1>
 ---
